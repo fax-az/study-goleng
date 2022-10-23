@@ -47,6 +47,7 @@ func main() {
 			succes = true
 			fmt.Println("Vi pobedili")
 			fmt.Println("Zagadannoe 4islo=", target)
+			reader = bufio.NewReader(os.Stdin)
 			break
 		}
 	}

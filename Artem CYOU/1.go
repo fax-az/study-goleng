@@ -43,5 +43,5 @@ func main() {
 		status = "ti slavnii maliy"
 	}
 
-	fmt.Println(status)
+	fmt.Print(status)
 }
