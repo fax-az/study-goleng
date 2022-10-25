@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func main() {
+	//one()
+	two()
+}
+
+func one() {
 	m := make(map[string]int)
 	m["k1"] = 7
 	m["k2"] = 13
@@ -34,4 +39,23 @@ func main() {
 	fmt.Println("map:", m)
 	m = map[string]int{}
 	fmt.Println("map:", m) //initialize an empty map
+}
+
+func two() {
+	type Node struct {
+		Next  *Node
+		Value interface{}
+	}
+	var first *Node
+
+	visited := make(map[*Node]bool)
+	for n := first; n != nil; n = n.Next {
+		if visited[n] {
+			fmt.Println("cycle detected")
+			break
+		}
+		visited[n] = true
+		fmt.Println(n.Value)
+	}
+
 }
